@@ -7,12 +7,14 @@
       </div>
       <router-view/>
     </div>
+    <modal/>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
 import Top from '@/components/menu/Top.vue';
+import Modal from '@/components/home/Modal.vue';
 
 export default {
   name: 'App',
@@ -23,6 +25,11 @@ export default {
   },
   components: {
     Top,
+    Modal,
+  },
+  mounted() {
+    // eslint-disable-next-line no-undef
+    $('#staticBackdrop').modal('show');
   },
 };
 </script>
